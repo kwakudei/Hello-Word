@@ -1,17 +1,29 @@
 pipeline {
     agent any
     stages {
-        stage('Example Build') {
+        stage('Hello') {
             steps {
                 echo 'Hello World'
             }
         }
-        stage('Example Deploy') {
-            when {
-                branch 'production'
+        stage('Build') {
+            steps {
+              echo 'Building'
             }
+        }
+        stage('Deploy') {
             steps {
                 echo 'Deploying'
+            }
+        }
+         stage('Test') {
+            steps {
+                echo 'Testing'
+             }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
             }
         }
     }
